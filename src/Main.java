@@ -19,8 +19,7 @@ public class Main {
         try (BufferedReader leitor = new BufferedReader(new FileReader(caminhoArquivo))) {
             String linha;
 
-           
-            leitor.readLine(); 
+            leitor.readLine();
 
             while ((linha = leitor.readLine()) != null) {
                 String[] dados = linha.split(";");
@@ -40,7 +39,6 @@ public class Main {
             System.out.println("Erro de formato numérico ao processar o arquivo: " + e.getMessage());
             return;
         }
-
 
         int quantidadeAlunos = alunos.size();
         int aprovados = 0;
@@ -69,7 +67,6 @@ public class Main {
         }
 
         double mediaGeral = somaNotas / quantidadeAlunos;
-
 
         try (BufferedWriter escritor = new BufferedWriter(new FileWriter(caminhoRelatorio))) {
             escritor.write("Quantidade de alunos na turma: " + quantidadeAlunos);
